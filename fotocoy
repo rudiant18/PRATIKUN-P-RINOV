@@ -1,0 +1,21 @@
+<?php
+// Jumlah fotocopy yang diminta
+$jumlah_fotocopy = 150; // Misalnya, ganti dengan input yang diinginkan
+
+// Menentukan harga per lembar berdasarkan jumlah
+if ($jumlah_fotocopy < 100) {
+    $harga_per_lembar = 150; // Harga untuk kurang dari 100 lembar
+} elseif ($jumlah_fotocopy >= 100 && $jumlah_fotocopy <= 200) {
+    $harga_per_lembar = 100; // Harga untuk 100-200 lembar
+} else {
+    $harga_per_lembar = 0; // Misalnya, bisa ditambahkan ketentuan untuk lebih dari 200 lembar
+}
+
+// Menghitung total harga
+$total_harga = $jumlah_fotocopy * $harga_per_lembar;
+
+// Menampilkan hasil
+echo "Jumlah fotocopy: $jumlah_fotocopy lembar<br>";
+echo "Harga per lembar: Rp. $harga_per_lembar<br>";
+echo "Total harga: Rp. $total_harga";
+?>
