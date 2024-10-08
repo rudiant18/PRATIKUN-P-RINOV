@@ -1,0 +1,55 @@
+<?php
+// Mendapatkan bulan saat ini
+$bulan = date('n'); // 'n' menghasilkan bulan tanpa angka nol
+
+// Menentukan jumlah hari dalam bulan tersebut
+switch ($bulan) {
+    case 1: // Januari
+        $hari = 31;
+        break;
+    case 2: // Februari
+        // Cek tahun kabisat
+        $tahun = date('Y');
+        if (($tahun % 4 == 0 && $tahun % 100 != 0) || ($tahun % 400 == 0)) {
+            $hari = 29; // Tahun kabisat
+        } else {
+            $hari = 28; // Bukan tahun kabisat
+        }
+        break;
+    case 3: // Maret
+        $hari = 31;
+        break;
+    case 4: // April
+        $hari = 30;
+        break;
+    case 5: // Mei
+        $hari = 31;
+        break;
+    case 6: // Juni
+        $hari = 30;
+        break;
+    case 7: // Juli
+        $hari = 31;
+        break;
+    case 8: // Agustus
+        $hari = 31;
+        break;
+    case 9: // September
+        $hari = 30;
+        break;
+    case 10: // Oktober
+        $hari = 31;
+        break;
+    case 11: // November
+        $hari = 30;
+        break;
+    case 12: // Desember
+        $hari = 31;
+        break;
+    default:
+        $hari = 0; // Bulan tidak valid
+        break;
+}
+
+echo "Jumlah hari di bulan " . date('F') . " adalah $hari.";
+?>
